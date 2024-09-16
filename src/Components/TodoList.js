@@ -1,4 +1,3 @@
-// src/Components/TodoList.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTodos, addTodo, deleteTodo, editTodo } from '../slices/todosSlice';
@@ -70,7 +69,7 @@ const TodoList = () => {
       maxWidth="md" 
       style={{ 
         padding: '20px', 
-        backgroundColor: '#121212', // Dark background color
+        backgroundColor: '#121212', 
         minHeight: '100vh', 
         display: 'flex',
         alignItems: 'center',
@@ -82,9 +81,9 @@ const TodoList = () => {
         width: '100%', 
         maxWidth: '800px', 
         margin: 'auto',
-        backgroundColor: '#1e1e1e', // Slightly lighter dark background for the Paper component
+        backgroundColor: '#1e1e1e', 
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)', 
-        color: '#e0e0e0' // Light text color for readability
+        color: '#e0e0e0' 
       }}>
         <Typography variant="h3" style={{ color: '#BB86FC' }} gutterBottom align="center">Todo App</Typography>
 
@@ -97,17 +96,17 @@ const TodoList = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{ 
             marginBottom: '20px', 
-            color: '#e0e0e0', // Text color for input
-            backgroundColor: '#333', // Background color for input
+            color: '#e0e0e0',
+            backgroundColor: '#333', 
           }}
           InputProps={{
             style: {
-              color: '#e0e0e0', // Text color inside input
+              color: '#e0e0e0', 
             },
           }}
           InputLabelProps={{
             style: {
-              color: '#e0e0e0', // Label color
+              color: '#e0e0e0', 
             },
           }}
         />
