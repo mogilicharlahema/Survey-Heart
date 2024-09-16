@@ -9,7 +9,7 @@ import { Alert } from '@mui/material';
 const TodoList = () => {
   const dispatch = useDispatch();
   const { items, loading, error } = useSelector((state) => state.todos);
-  
+
   const [searchTerm, setSearchTerm] = useState('');
   const [newTodo, setNewTodo] = useState('');
   const [editingTodoId, setEditingTodoId] = useState(null);
@@ -21,7 +21,7 @@ const TodoList = () => {
     dispatch(fetchTodos());
   }, [dispatch]);
 
-  const filteredTodos = items.filter((todo) => 
+  const filteredTodos = items.filter((todo) =>
     todo.todo.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -64,26 +64,29 @@ const TodoList = () => {
   if (error) return <Typography color="error">Error: {error}</Typography>;
 
   return (
-    <Container 
-      component="main" 
-      maxWidth="md" 
-      style={{ 
-        padding: '20px', 
-        backgroundColor: '#121212', 
-        minHeight: '100vh', 
+    <Container
+      component="main"
+      maxWidth="md"
+      style={{
+        padding: '20px',
+        backgroundColor: '#121212',
+        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
       }}
     >
-      <Paper style={{ 
-        padding: '20px', 
-        width: '100%', 
-        maxWidth: '800px', 
+      <Paper style={{
+        padding: '20px',
+        width: '100%',
+        maxWidth: '800px',
         margin: 'auto',
-        backgroundColor: '#1e1e1e', 
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)', 
-        color: '#e0e0e0' 
+        backgroundColor: '#1e1e1e',
+
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+        color: '#e0e0e0',
+        color: 'red'
+
       }}>
         <Typography variant="h3" style={{ color: '#BB86FC' }} gutterBottom align="center">Todo App</Typography>
 
@@ -94,19 +97,19 @@ const TodoList = () => {
           fullWidth
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ 
-            marginBottom: '20px', 
+          style={{
+            marginBottom: '20px',
             color: '#e0e0e0',
-            backgroundColor: '#333', 
+            backgroundColor: '#333',
           }}
           InputProps={{
             style: {
-              color: '#e0e0e0', 
+              color: '#e0e0e0',
             },
           }}
           InputLabelProps={{
             style: {
-              color: '#e0e0e0', 
+              color: '#e0e0e0',
             },
           }}
         />
@@ -118,8 +121,8 @@ const TodoList = () => {
           fullWidth
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
-          style={{ 
-            marginBottom: '20px', 
+          style={{
+            marginBottom: '20px',
             color: '#e0e0e0',
             backgroundColor: '#333',
           }}
